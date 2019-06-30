@@ -20,11 +20,25 @@ public class PromocionesController {
     public String index(){
         return "Hello World";
     }
-
-     //http://localhost:8080/api/promocion/promociones
+    //Listar todos las promociones
+    //http://localhost:8080/api/promocion/promociones
     @GetMapping("/promociones")
-    public List<Promocion> listarPromocionesDestino() {
-        return negocio.obtenerPromocionesDestino();
+    public List<Promocion> listarPromociones(){
+        return negocio.obtenerPromociones();
+    }
+
+    //Buscar promociones por nombre
+    //http://localhost:8080/api/promocion/promonombre?id=ARE01
+    @GetMapping("/promonombre")
+    public Promocion promoPorNombre(@RequestParam String id){
+        return negocio.obtenerPromoNombre(id);
+    }
+
+    //Listar promociones por destino
+    //http://localhost:8080/api/promocion/promodestino?id=AREQUIPA
+    @GetMapping("/promodestino")
+    public List<Promocion> listarPromocionesDestino(@RequestParam String id) {
+        return negocio.obtenerPromoDestino(id);
     }
 
     ///////////////////////////////////POST/////////////////////////////////////

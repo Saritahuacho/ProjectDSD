@@ -50,6 +50,11 @@ public class Negocio {
         return clienteRepositorio.buscarCliente(id);
     }
 
+    public List<Promocion> obtenerPromosCliente(String id){
+        //Falta
+        return null;
+    }
+
     ////////////////////////////////////////METODOS PARA PROMOCIONES////////////////////////////////////////
 
     public Promocion registrarPromocion(String dni, Promocion promocion){
@@ -65,16 +70,14 @@ public class Negocio {
         return (List<Promocion>)promocionRepositorio.findAll();
     }
 
-    public List<Promocion> obtenerPromocionesDestino() {
-        List<Promocion> promociones = obtenerPromociones();
-        List<Promocion> promocionesfiltro = null;
-        for(Promocion p:promociones){
-            if(p.getDestino().contentEquals("CUZCO")) {
-                System.out.println("OK");
-                promocionesfiltro.add(p);
-                //System.out.println("Descripcion: "+p.getDescripcion()+" F.Inicio: " + p.getFinicio() + " F.Fin: " + p.getFfin() + " Precio: " + p.getPrecio() );
-            }
-        }
-        return promocionesfiltro;
+    public Promocion obtenerPromoNombre(String id){
+        return promocionRepositorio.buscarPromocion(id);
     }
+
+    public List<Promocion> obtenerPromoDestino(String destino){
+        return promocionRepositorio.buscarPromocionDestino(destino);
+    }
+
+
+
 }

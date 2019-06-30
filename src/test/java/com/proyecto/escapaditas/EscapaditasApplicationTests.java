@@ -76,7 +76,7 @@ public class EscapaditasApplicationTests {
 		promocion.setDescripcion("Destino a Arequipa Clasica");
 		promocion.setDestino("AREQUIPA");
 		Promocion p;
-		p = negocio.registrarPromocion("11111111", promocion);
+		p = negocio.registrarPromocion("43695785", promocion);
 		assertNotNull(p);
 	}
 
