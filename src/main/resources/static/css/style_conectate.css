@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+.personas{}
+.personas article{
+	display: flex;
+	width:100%;
+}
+.personas .img_personas
+{}
+.personas img{
+	}
+.personas .texto_personas{}
