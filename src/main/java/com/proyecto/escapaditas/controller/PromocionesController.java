@@ -10,41 +10,25 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
-public class PromocionesRest {
+@RequestMapping("/api/promocion")
+public class PromocionesController {
     @Autowired
     private Negocio negocio;
 
-    //GET
+    ///////////////////////////////////GET/////////////////////////////////////
     @GetMapping("/")
     public String index(){
         return "Hello World";
     }
 
-
-    //http://localhost:8080/api/clientes
-    @GetMapping("/clientes")
-    public List<Cliente> listarClientes(){
-        return negocio.obtenerClientes();
-    }
-
-    @GetMapping("/clientesDni")
-    public Cliente clientePorDni(@RequestParam String id){
-        return negocio.obtenerClienteId(id);
-    }
-
-
-    //http://localhost:8080/api/promociones
+     //http://localhost:8080/api/promocion/promociones
     @GetMapping("/promociones")
     public List<Promocion> listarPromocionesDestino() {
         return negocio.obtenerPromocionesDestino();
     }
-    //POST
-    //http://localhost:8080/api/cliente
-    @PostMapping("/cliente")
-    public Cliente registrar(@RequestBody Cliente cliente){
-        return negocio.registrar(cliente);
-    }
 
+    ///////////////////////////////////POST/////////////////////////////////////
+
+    ///////////////////////////////////PUT/////////////////////////////////////
 
 }
