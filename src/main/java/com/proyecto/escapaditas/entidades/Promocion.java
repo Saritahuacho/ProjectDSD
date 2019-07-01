@@ -20,6 +20,15 @@ public class Promocion implements Serializable {
     private int capacidad;
     private String descripcion;
     private String destino;
+    private String respuesta;
+
+    public String getRespuesta() {
+        return respuesta;
+    }
+
+    public void setRespuesta(String respuesta) {
+        this.respuesta = respuesta;
+    }
 
     //Relaciones
     @ManyToOne
