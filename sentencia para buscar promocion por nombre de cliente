@@ -1,0 +1,5 @@
+/////////////obtenerPromocion por nombre de cliente
+   //public List<Promocion> obtenerPromocionCliente(String nombre)
+//{
+    //return promocionRepositorio.buscarPromocion(nombre);
+//}
