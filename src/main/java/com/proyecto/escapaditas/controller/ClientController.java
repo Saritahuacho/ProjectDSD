@@ -1,8 +1,11 @@
 package com.proyecto.escapaditas.controller;
 
+import com.proyecto.escapaditas.Constants;
 import com.proyecto.escapaditas.entidades.Cliente;
 import com.proyecto.escapaditas.entidades.Promocion;
 import com.proyecto.escapaditas.negocio.Negocio;
+import com.proyecto.escapaditas.proxy.ClienteProxy;
+import com.proyecto.escapaditas.proxy.response.ClienteResponse;
 import com.proyecto.escapaditas.repositorios.PromocionRepositorio;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +14,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 
 @RestController
 @RequestMapping("/api/cliente")
@@ -20,10 +25,10 @@ public class ClientController {
     private Negocio negocio;
     Logger logger = LoggerFactory.getLogger(ClientController.class);
 
-    //GET
-    @GetMapping("/")
-    public String index(){
-        return "Hello World";
+    private ClienteProxy proxy;
+
+    public ClientController(){
+        proxy = new ClienteProxy(negocio);
     }
 
     ///////////////////////////////////GET/////////////////////////////////////
@@ -31,8 +36,21 @@ public class ClientController {
     //Listar todos los clientes
     //http://localhost:8080/api/cliente/clientes
     @GetMapping("/clientes")
-    public List<Cliente> listarClientes(){
-        return negocio.obtenerClientes();
+    public ClienteResponse listarClientes(){
+
+        ClienteResponse response = new ClienteResponse(Constants.ERROR_CODE_OK,
+                Constants.ERROR_MESSAGE_OK,
+                new ArrayList<>());
+
+        try{
+            response.setData(negocio.obtenerClientes());
+        }catch (Exception e){
+            response.setErrorCode(Constants.ERROR_CODE_FAIL);
+            response.setErrorMessage(Constants.ERROR_MESSAGE_FAIL);
+            java.util.logging.Logger.getLogger(getClass().getName()).log(Level.ALL, e.getLocalizedMessage());
+        }
+
+        return response;
     }
 
     //Listar todas las promociones de un cliente
@@ -45,8 +63,23 @@ public class ClientController {
     //Buscar clientes por DNI
     //http://localhost:8080/api/cliente/clientedni?id=11111111
     @GetMapping("/clientedni")
-    public Cliente clientePorDni(@RequestParam String id){
-        return negocio.obtenerClienteId(id);
+    public ClienteResponse clientePorDni(@RequestParam String id){
+
+        ClienteResponse response = new ClienteResponse(Constants.ERROR_CODE_OK,
+                Constants.ERROR_MESSAGE_OK,
+                new ArrayList<>());
+
+        try{
+            List<Cliente> result = new ArrayList<>();
+            result.add(negocio.obtenerClienteId(id));
+            response.setData(result);
+        }catch (Exception e){
+            response.setErrorCode(Constants.ERROR_CODE_FAIL);
+            response.setErrorMessage(Constants.ERROR_MESSAGE_FAIL);
+            java.util.logging.Logger.getLogger(getClass().getName()).log(Level.ALL, e.getLocalizedMessage());
+        }
+
+        return response;
     }
 
 
@@ -55,8 +88,23 @@ public class ClientController {
     //Registrar cliente
     //http://localhost:8080/api/cliente/cliente
     @PostMapping("/cliente")
-    public Cliente registrar(@RequestBody Cliente cliente){
-        return negocio.registrar(cliente);
+    public ClienteResponse registrar(@RequestBody Cliente cliente){
+
+        ClienteResponse response = new ClienteResponse(Constants.ERROR_CODE_OK,
+                Constants.ERROR_MESSAGE_OK,
+                new ArrayList<>());
+
+        try{
+            List<Cliente> result = new ArrayList<>();
+            result.add(negocio.registrar(cliente));
+            response.setData(result);
+        }catch (Exception e){
+            response.setErrorCode(Constants.ERROR_CODE_FAIL);
+            response.setErrorMessage(Constants.ERROR_MESSAGE_FAIL);
+            java.util.logging.Logger.getLogger(getClass().getName()).log(Level.ALL, e.getLocalizedMessage());
+        }
+
+        return response;
     }
 
     ///////////////////////////////////PUT/////////////////////////////////////
