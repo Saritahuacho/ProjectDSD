@@ -16,7 +16,6 @@ import java.util.List;
 @RequestMapping("/api/promocion")
 public class PromocionesController {
     @Autowired
-    private JmsProducer jmsProducer;
     private Negocio negocio;
 
 
@@ -25,11 +24,18 @@ public class PromocionesController {
     public String index(){
         return "Hello World";
     }
-    //Listar todos las promociones
+    //Listar todos las promociones vigentes
     //http://localhost:8080/api/promocion/promociones
     @GetMapping("/promociones")
     public List<Promocion> listarPromociones(){
         return negocio.obtenerPromociones();
+    }
+
+    //Listar todos las promociones vigentes
+    //http://localhost:8080/api/promocion/promovigente
+    @GetMapping("/promovigente")
+    public List<Promocion> listarPromoVigentes(){
+        return negocio.obtenerPromosVigente();
     }
 
     //Buscar promociones por nombre
@@ -46,9 +52,16 @@ public class PromocionesController {
         return negocio.obtenerPromoDestino(id);
     }
 
+    //Listar promociones por destino
+    //http://localhost:8080/api/promocion/promodestino?id=AREQUIPA
+    @GetMapping("/promo")
+    public List<Promocion> BusquedaPromo(@RequestParam String destino,@RequestParam String f1,@RequestParam String f2) {
+        return negocio.obtenerPromos(destino,f1,f2);
+    }
+
     ///////////////////////////////////POST/////////////////////////////////////
 
-    @PostMapping("/enviar")
+   /* @PostMapping("/enviar")
     public Promocion enviar(@RequestBody Promocion promocion) {
         ObjectMapper mapper = new ObjectMapper();
         //Object a JSON en String
@@ -63,7 +76,7 @@ public class PromocionesController {
             promocion.setRespuesta("Error en trama, no se envía!");
         }
         return promocion;
-    }
+    }*/
 
     ///////////////////////////////////PUT/////////////////////////////////////
 

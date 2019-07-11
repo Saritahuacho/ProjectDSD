@@ -1,3 +1,4 @@
+/*
 package com.proyecto.escapaditas.jms;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -39,4 +40,4 @@ public class JmsConsumer {
 
 }
 
-
+*/

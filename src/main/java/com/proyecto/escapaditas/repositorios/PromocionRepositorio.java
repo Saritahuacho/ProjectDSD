@@ -16,4 +16,11 @@ public interface PromocionRepositorio extends CrudRepository<Promocion, Long> {
     @Query("SELECT c FROM Promocion c WHERE c.destino=:destino")
     List<Promocion> buscarPromocionDestino(@Param("destino") String destino);
 
+    @Query("SELECT c FROM Promocion c WHERE c.respuesta=null")
+    List<Promocion> buscarPromosVigente();
+
+    @Query("SELECT c FROM Promocion c WHERE c.destino=:destino AND c.finicio>=:f1 AND c.ffin>=:f2 AND c.respuesta=null")
+    List<Promocion> buscarPromo(@Param("destino") String destino,@Param("f1") String f1,@Param("f2") String f2);
+
+
 }

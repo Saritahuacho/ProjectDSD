@@ -81,12 +81,20 @@ public class Negocio {
         return (List<Promocion>)promocionRepositorio.findAll();
     }
 
+    public List<Promocion> obtenerPromosVigente(){
+        return (List<Promocion>)promocionRepositorio.buscarPromosVigente();
+    }
+
     public Promocion obtenerPromoNombre(String id){
         return promocionRepositorio.buscarPromocion(id);
     }
 
     public List<Promocion> obtenerPromoDestino(String destino){
         return promocionRepositorio.buscarPromocionDestino(destino);
+    }
+
+    public List<Promocion> obtenerPromos(String destino, String f1, String f2){
+        return promocionRepositorio.buscarPromo(destino,f1,f2);
     }
 
 
