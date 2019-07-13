@@ -69,15 +69,15 @@ public class EscapaditasApplicationTests {
 	@Test
 	public void probarPromocion2(){
 		Promocion promocion= new Promocion();
-		promocion.setNombrepromo("ARE01");
-		promocion.setFinicio("16/07/19");
-		promocion.setFfin("31/07/19");
+		promocion.setNombrepromo("ARE20");
+		promocion.setFinicio("19/10/02");
+		promocion.setFfin("19/10/10");
 		promocion.setPrecio(399.99);
 		promocion.setCapacidad(5);
 		promocion.setDescripcion("Destino a Arequipa Clasica");
 		promocion.setDestino("AREQUIPA");
 		Promocion p;
-		p = negocio.registrarPromocion("43695785", promocion);
+		p = negocio.registrarPromocion("43695785", promocion,null);
 		assertNotNull(p);
 	}
 

@@ -53,12 +53,7 @@ public class ClientController {
         return response;
     }
 
-    //Listar todas las promociones de un cliente
-    //http://localhost:8080/api/cliente/promoscliente
-    @GetMapping("/promoscliente")
-    public List<Promocion> listarPromosCliente(@RequestParam String id){
-        return negocio.obtenerPromosCliente(id);
-    }
+
 
     //Buscar clientes por DNI
     //http://localhost:8080/api/cliente/clientedni?id=11111111

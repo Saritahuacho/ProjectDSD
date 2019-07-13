@@ -61,17 +61,17 @@ public class Negocio {
         return clienteRepositorio.buscarCliente(id);
     }
 
-    public List<Promocion> obtenerPromosCliente(String id){
-        //Falta
-        return null;
-    }
 
     ////////////////////////////////////////METODOS PARA PROMOCIONES////////////////////////////////////////
-
-    public Promocion registrarPromocion(String dni, Promocion promocion){
+    public List<Promocion> obtenerPromosCliente(String dni){
+        Cliente c = clienteRepositorio.buscarCliente(dni);
+        return (List<Promocion>)promocionRepositorio.buscarPromosCliente(c.getCodigo());
+    }
+    public Promocion registrarPromocion(String dni, Promocion promocion,String respuesta){
         Cliente c =  clienteRepositorio.buscarCliente(dni);
         if (c!=null) {
             promocion.setCliente(c);
+            promocion.setRespuesta(respuesta);
             return promocionRepositorio.save(promocion);
         }
         return null;
