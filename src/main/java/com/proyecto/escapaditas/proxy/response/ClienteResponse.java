@@ -9,7 +9,7 @@ public class ClienteResponse extends BaseResponse {
     private List<Cliente> data;
 
     public ClienteResponse(String errorCode, String errorMessage, List<Cliente> data) {
-        super(errorCode, errorMessage);
+        super(errorCode, errorMessage); //super llama al constructor de BaseResponse
 
         this.data = data;
     }

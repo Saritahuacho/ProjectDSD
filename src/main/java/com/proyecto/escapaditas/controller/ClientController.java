@@ -18,17 +18,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 
-@RestController
-@RequestMapping("/api/cliente")
+@RestController // controller que responde para un request
+@RequestMapping("/api/cliente") //nos nos indica donse esta el origen del controller para llamar
 public class ClientController {
-    @Autowired
+    @Autowired // el F de sprint boot inicia la clase
     private Negocio negocio;
-    Logger logger = LoggerFactory.getLogger(ClientController.class);
+    Logger logger = LoggerFactory.getLogger(ClientController.class); //framewor para escribir log
 
-    private ClienteProxy proxy;
+    private ClienteProxy proxy; //objeto para comunicacion entre web service y la BD
 
-    public ClientController(){
-        proxy = new ClienteProxy(negocio);
+    public ClientController(){  // constructor de un objeto de Cliente controller
+        proxy = new ClienteProxy(negocio); // Genera un nuevo objeto de tipo ClienteProxy
     }
 
     ///////////////////////////////////GET/////////////////////////////////////
@@ -36,7 +36,7 @@ public class ClientController {
     //Listar todos los clientes
     //http://localhost:8080/api/cliente/clientes
     @GetMapping("/clientes")
-    public ClienteResponse listarClientes(){
+    public ClienteResponse listarClientes(){//metodo que retorna un objeto de tipo ClienteResponse
 
         ClienteResponse response = new ClienteResponse(Constants.ERROR_CODE_OK,
                 Constants.ERROR_MESSAGE_OK,
@@ -86,8 +86,8 @@ public class ClientController {
     ///////////////////////////////////POST/////////////////////////////////////
 
     //Registrar cliente
-    //http://localhost:8080/api/cliente/cliente
-    @PostMapping("/cliente")
+    //http://localhost:8080/api/cliente/RegistrarCliente
+    @PostMapping("/Registrarcliente")
     public ClienteResponse registrar(@RequestBody Cliente cliente){
 
         ClienteResponse response = new ClienteResponse(Constants.ERROR_CODE_OK,

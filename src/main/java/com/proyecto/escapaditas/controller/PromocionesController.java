@@ -21,11 +21,7 @@ public class PromocionesController {
 
 
     ///////////////////////////////////GET/////////////////////////////////////
-    @GetMapping("/")
-    public String index(){
-        return "Hello World";
-    }
-    //Listar todos las promociones
+       //Listar todos las promociones
     //http://localhost:8080/api/promocion/promociones
     @GetMapping("/promociones")
     public List<Promocion> listarPromociones(){
