@@ -13,7 +13,7 @@
 
     // url which contains data for drop down
     // just a sample url
-    const url = 'https://api.myjson.com/bins/7xq2x';
+    const url = 'http://www.mocky.io/v2/5d2a34313000006e005a4121';
 
     // create a async request for fetching the data
     const request = new XMLHttpRequest();
@@ -30,11 +30,12 @@
             for (let i = 0; i < data.length; i++) {
                 option = document.createElement('option');
                 option.text = data[i].name;
-                option.value = data[i].abbreviation;
+                option.value = data[i].id;
                 dropdown.add(option);
             }
         } else {
             // Reached the server, but it returned an error
+            console.error('Http Request failed - code ' + request.status);
         }
     }
 
