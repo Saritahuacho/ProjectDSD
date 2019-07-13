@@ -93,8 +93,8 @@ public class Negocio {
         return promocionRepositorio.buscarPromocionDestino(destino);
     }
 
-    public List<Promocion> obtenerPromos(String destino, String f1, String f2){
-        return promocionRepositorio.buscarPromo(destino,f1,f2);
+    public List<Promocion> obtenerPromos(String destino, String f1, String f2,int cant){
+        return promocionRepositorio.buscarPromo(destino,f1,f2,cant);
     }
 
 

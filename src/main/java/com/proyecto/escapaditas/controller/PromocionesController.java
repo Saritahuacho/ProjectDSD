@@ -63,11 +63,11 @@ public class PromocionesController {
         return negocio.obtenerPromoDestino(id);
     }
 
-    //Busqueda de Promo destino y fechas
-    //http://localhost:8888/api/promocion/promo?destino=AREQUIPA&f1=19/10/01&f2=19/10/11
+    //Busqueda de Promo destino, fechas y cantidad de pasajeros
+    //http://localhost:8888/api/promocion/promo?destino=AREQUIPA&f1=19/10/01&f2=19/10/11&cant=4
     @GetMapping("/promo")
-    public List<Promocion> BusquedaPromo(@RequestParam String destino,@RequestParam String f1,@RequestParam String f2) {
-        return negocio.obtenerPromos(destino,f1,f2);
+    public List<Promocion> BusquedaPromo(@RequestParam String destino,@RequestParam String f1,@RequestParam String f2,@RequestParam int cant) {
+        return negocio.obtenerPromos(destino,f1,f2,cant);
     }
 
     /*Listar todas las promociones de un cliente
