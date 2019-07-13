@@ -1,152 +1,153 @@
-	<!DOCTYPE html>
-	<html lang="zxx" class="no-js">
-	<head>
-		<!-- Mobile Specific Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Favicon-->
-		<link rel="shortcut icon" href="img/fav.png">
-		<!-- Author Meta -->
-		<meta name="author" content="colorlib">
-		<!-- Meta Description -->
-		<meta name="description" content="">
-		<!-- Meta Keyword -->
-		<meta name="keywords" content="">
-		<!-- meta character set -->
-		<meta charset="UTF-8">
-		<!-- Site Title -->
-		<title>Travel</title>
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+    <head>
+        <!-- Mobile Specific Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Favicon-->
+        <link rel="shortcut icon" href="img/fav.png">
+        <!-- Author Meta -->
+        <meta name="author" content="colorlib">
+        <!-- Meta Description -->
+        <meta name="description" content="">
+        <!-- Meta Keyword -->
+        <meta name="keywords" content="">
+        <!-- meta character set -->
+        <meta charset="UTF-8">
+        <!-- Site Title -->
+        <title>Travel</title>
 
-		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
-			<!--
-			CSS
-			============================================= -->
-			<link rel="stylesheet" href="css/linearicons.css">
-			<link rel="stylesheet" href="css/font-awesome.min.css">
-			<link rel="stylesheet" href="css/bootstrap.css">
-			<link rel="stylesheet" href="css/magnific-popup.css">
-			<link rel="stylesheet" href="css/jquery-ui.css">				
-			<link rel="stylesheet" href="css/nice-select.css">							
-			<link rel="stylesheet" href="css/animate.min.css">
-			<link rel="stylesheet" href="css/owl.carousel.css">				
-			<link rel="stylesheet" href="css/main.css">
-		</head>
-		<body>	
-			<header id="header">
-				
-				<div class="container main-menu">
-					<div class="row align-items-center justify-content-between d-flex">
-				      <div id="logo">
-				        <a href="index.html"><img src="img/logo.png" alt=""  title="" /></a>
-				      </div>
-				      <nav id="nav-menu-container">
-				        <ul class="nav-menu">
-				          <li><a href="index.html">Inicio</a></li>
-				          <li><a href="about.html">Nosotros</a></li>
-				          <li><a href="contact.html">Contacto</a></li>
-				        </ul>
-				      </nav><!-- #nav-menu-container -->					      		  
-					</div>
-				</div>
-			</header><!-- #header -->
-			
-			<!-- start banner Area -->
-			<section class="banner-area relative">
-							
-				<div class="container">
-					<div class="row fullscreen align-items-center justify-content-between">
-						<div class="col-lg-6 col-md-6 banner-left">
-							<h6 class="text-white">Conoce las mejores ofertas de viajes</h6>
-							<h1 class="text-white">Escapaditas</h1>
-							<p class="text-white">
-								Vive una nueva experiencia con nosotros, tendras la oportunidad de conocer lugares increibles y además podrás compartir tu viaje con nuevos amigos. Atrévete a disfrutar de esta nueva aventura juntos.
-							</p>
-						</div>
-						<div class="col-lg-4 col-md-6 banner-right">
-							<ul class="nav nav-tabs" id="myTab" role="tablist">
-							  <li class="nav-item">
-							    <a class="nav-link active" id="flight-tab" data-toggle="tab" href="#flight" role="tab" aria-controls="flight" aria-selected="true">Promociones</a>
-							  </li>
-							  <li class="nav-item">
-							    <a class="nav-link" id="hotel-tab" data-toggle="tab" href="#hotel" role="tab" aria-controls="hotel" aria-selected="false">Conectate</a>
-							  </li>
-							  <li class="nav-item">
-							    <a class="nav-link" id="holiday-tab" data-toggle="tab" href="#holiday" role="tab" aria-controls="holiday" aria-selected="false">Turismo</a>
-							  </li>
-                              
-							</ul>
-							<div class="tab-content" id="myTabContent">
-							  <div class="tab-pane fade show active" id="flight" role="tabpanel" aria-labelledby="flight-tab">
-								<form action="/api/clientes" class="form-wrap">
-									<input type="text" class="form-control" name="to" placeholder="Destino " onfocus="this.placeholder = ''" onblur="this.placeholder = 'To '">
-									<input type="text" class="form-control date-picker" name="start" placeholder="Fecha de ida " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Start '">
-									<input type="text" class="form-control date-picker" name="return" placeholder="Fecha de vuelta " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Return '">
-									<input type="number" min="1" max="20" class="form-control" name="adults" placeholder="Cant.Pasajeros " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Adults '">
-									<input type="submit" value="Submit"/>
-									<a href="consulta_promociones.html" class="primary-btn text-uppercase">Buscar</a>
-								</form>
-							  </div>
-							  <div class="tab-pane fade" id="hotel" role="tabpanel" aria-labelledby="hotel-tab">
-								<form class="form-wrap">
-                                	<input type="text" class="form-control" name="name" placeholder="Interes " onfocus="this.placeholder = ''" onblur="this.placeholder = 'From '">
-									<input type="text" class="form-control" name="name" placeholder="Origen " onfocus="this.placeholder = ''" onblur="this.placeholder = 'From '">									
-									<input type="text" class="form-control" name="to" placeholder="Destino " onfocus="this.placeholder = ''" onblur="this.placeholder = 'To '">
-															
-									<a href="consulta_conectate.html" class="primary-btn text-uppercase">Buscar</a>									
-								</form>							  	
-							  </div>
-							  <div class="tab-pane fade" id="holiday" role="tabpanel" aria-labelledby="holiday-tab">
-								<form class="form-wrap">
-                                	<input type="text" class="form-control" name="name" placeholder="Interes " onfocus="this.placeholder = ''" onblur="this.placeholder = 'From '">
-									<input type="text" class="form-control" name="name" placeholder="Region " onfocus="this.placeholder = ''" onblur="this.placeholder = 'From '">									
-									<input type="text" class="form-control" name="to" placeholder="Provincia " onfocus="this.placeholder = ''" onblur="this.placeholder = 'To '">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+        <!--
+        CSS
+        ============================================= -->
+        <link rel="stylesheet" href="css/linearicons.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="css/jquery-ui.css">				
+        <link rel="stylesheet" href="css/nice-select.css">							
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.css">				
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>	
+        <header id="header">
+
+            <div class="container main-menu">
+                <div class="row align-items-center justify-content-between d-flex">
+                    <div id="logo">
+                        <a href="index.html"><img src="img/logo.png" alt=""  title="" /></a>
+                    </div>
+                    <nav id="nav-menu-container">
+                        <ul class="nav-menu">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="about.html">Nosotros</a></li>
+                            <li><a href="contact.html">Contacto</a></li>
+                        </ul>
+                    </nav><!-- #nav-menu-container -->					      		  
+                </div>
+            </div>
+        </header><!-- #header -->
+
+        <!-- start banner Area -->
+        <section class="banner-area relative">
+
+            <div class="container">
+                <div class="row fullscreen align-items-center justify-content-between">
+                    <div class="col-lg-6 col-md-6 banner-left">
+                        <h6 class="text-white">Conoce las mejores ofertas de viajes</h6>
+                        <h1 class="text-white">Escapaditas</h1>
+                        <p class="text-white">
+                            Vive una nueva experiencia con nosotros, tendras la oportunidad de conocer lugares increibles y además podrás compartir tu viaje con nuevos amigos. Atrévete a disfrutar de esta nueva aventura juntos.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 banner-right">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="flight-tab" data-toggle="tab" href="#flight" role="tab" aria-controls="flight" aria-selected="true">Promociones</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="hotel-tab" data-toggle="tab" href="#hotel" role="tab" aria-controls="hotel" aria-selected="false">Conectate</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="holiday-tab" data-toggle="tab" href="#holiday" role="tab" aria-controls="holiday" aria-selected="false">Turismo</a>
+                            </li>
+
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="flight" role="tabpanel" aria-labelledby="flight-tab">
+                                <form action="/api/clientes" class="form-wrap">
+                                    <select class="form-control" id="to" name="to"></select>
+                                    <input type="text" class="form-control date-picker" name="start" placeholder="Fecha de ida " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Start '">
+                                    <input type="text" class="form-control date-picker" name="return" placeholder="Fecha de vuelta " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Return '">
+                                    <input type="number" min="1" max="20" class="form-control" name="adults" placeholder="Cant.Pasajeros " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Adults '">
+                                    <input type="submit" value="Submit"/>
+                                    <a href="consulta_promociones.html" class="primary-btn text-uppercase">Buscar</a>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="hotel" role="tabpanel" aria-labelledby="hotel-tab">
+                                <form class="form-wrap">
+                                    <input type="text" class="form-control" name="name" placeholder="Interes " onfocus="this.placeholder = ''" onblur="this.placeholder = 'From '">
+                                    <input type="text" class="form-control" name="name" placeholder="Origen " onfocus="this.placeholder = ''" onblur="this.placeholder = 'From '">									
+                                    <input type="text" class="form-control" name="to" placeholder="Destino " onfocus="this.placeholder = ''" onblur="this.placeholder = 'To '">
+
+                                    <a href="consulta_conectate.html" class="primary-btn text-uppercase">Buscar</a>									
+                                </form>							  	
+                            </div>
+                            <div class="tab-pane fade" id="holiday" role="tabpanel" aria-labelledby="holiday-tab">
+                                <form class="form-wrap">
+                                    <input type="text" class="form-control" name="name" placeholder="Interes " onfocus="this.placeholder = ''" onblur="this.placeholder = 'From '">
+                                    <input type="text" class="form-control" name="name" placeholder="Region " onfocus="this.placeholder = ''" onblur="this.placeholder = 'From '">									
+                                    <input type="text" class="form-control" name="to" placeholder="Provincia " onfocus="this.placeholder = ''" onblur="this.placeholder = 'To '">
                                     <input type="text" class="form-control" name="to" placeholder="Distrito " onfocus="this.placeholder = ''" onblur="this.placeholder = 'To '">
                                     <input type="text" class="form-control" name="to" placeholder="Valoracion " onfocus="this.placeholder = ''" onblur="this.placeholder = 'To '">
-									
-															
-									<a href="consulta_turismo.html" class="primary-btn text-uppercase">Buscar</a>									
-								</form>							  	
-							  </div>
-							</div>
-						</div>
-					</div>
-				</div>					
-			</section>
-			<!-- End banner Area -->
 
-		
-			
-	
-						
 
-			<!-- start footer Area -->		
-			<footer class="footer-area section-gap">
-				<div class="container">					
-				<div class="row footer-bottom d-flex justify-content-between align-items-center">
-						<p class="col-lg-8 col-sm-12 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->&copy;<script>document.write(new Date().getFullYear());</script>Siguenos en nuestras redes sociales</p>
-						<div class="col-lg-4 col-sm-12 footer-social">
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-instagram"></i></a>
-						</div>
-					</div>
-				</div>
-			</footer>
-			<!-- End footer Area -->	
+                                    <a href="consulta_turismo.html" class="primary-btn text-uppercase">Buscar</a>									
+                                </form>							  	
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>					
+        </section>
+        <!-- End banner Area -->
 
-			<script src="js/vendor/jquery-2.2.4.min.js"></script>
-			<script src="js/popper.min.js"></script>
-			<script src="js/vendor/bootstrap.min.js"></script>			
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>		
- 			<script src="js/jquery-ui.js"></script>					
-  			<script src="js/easing.min.js"></script>
 
-			<script src="js/hoverIntent.js"></script>
-			<script src="js/superfish.min.js"></script>	
-			<script src="js/jquery.ajaxchimp.min.js"></script>
-			<script src="js/jquery.magnific-popup.min.js"></script>						
-			<script src="js/jquery.nice-select.min.js"></script>					
-			<script src="js/owl.carousel.min.js"></script>							
-			<script src="js/mail-script.js"></script>	
-			<script src="js/main.js"></script>	
-		</body>
-	</html>
+
+
+
+
+        <!-- start footer Area -->		
+        <footer class="footer-area section-gap">
+            <div class="container">					
+                <div class="row footer-bottom d-flex justify-content-between align-items-center">
+                    <p class="col-lg-8 col-sm-12 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->&copy;<script>document.write(new Date().getFullYear());</script>Siguenos en nuestras redes sociales</p>
+                    <div class="col-lg-4 col-sm-12 footer-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End footer Area -->	
+
+        <script src="js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>			
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>		
+        <script src="js/jquery-ui.js"></script>					
+        <script src="js/easing.min.js"></script>
+
+        <script src="js/hoverIntent.js"></script>
+        <script src="js/superfish.min.js"></script>	
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>						
+        <script src="js/jquery.nice-select.min.js"></script>					
+        <script src="js/owl.carousel.min.js"></script>							
+        <script src="js/mail-script.js"></script>	
+        <script src="js/main.js"></script>	
+        <script src="js/get-destinations.js"></script>
+    </body>
+</html>
