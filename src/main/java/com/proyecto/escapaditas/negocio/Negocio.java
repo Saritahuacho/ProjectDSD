@@ -4,15 +4,12 @@ import com.proyecto.escapaditas.entidades.Cliente;
 import com.proyecto.escapaditas.entidades.Pago;
 import com.proyecto.escapaditas.entidades.Promocion;
 import com.proyecto.escapaditas.repositorios.ClienteRepositorio;
-import com.proyecto.escapaditas.repositorios.PagoRepositorio;
 import com.proyecto.escapaditas.repositorios.PromocionRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import javax.xml.ws.ServiceMode;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class Negocio {
@@ -20,15 +17,8 @@ public class Negocio {
     private ClienteRepositorio clienteRepositorio;
     @Autowired
     private PromocionRepositorio promocionRepositorio;
-    @Autowired
-    private PagoRepositorio pagoRepositorio;
 
-    ////////////////////////////////////////METODOS PARA PAGO////////////////////////////////////////
-    @Transactional
-    public Pago grabar(Pago pago)
-    {
-        return pagoRepositorio.save(pago);
-    }
+
 
     ////////////////////////////////////////METODOS PARA CLIENTES////////////////////////////////////////
     public Cliente registrar(Cliente cliente){

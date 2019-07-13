@@ -37,12 +37,12 @@ public class PagoController {
         return pago;
     }
 
-    /*
+/*
         {
     	"dni":"43695785",
     	"nombrepromo":"ARE01",
         "precio": 399.00
-    }
-     */
+    }*/
+
 
 }

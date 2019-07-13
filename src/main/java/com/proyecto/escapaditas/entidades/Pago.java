@@ -3,13 +3,11 @@ package com.proyecto.escapaditas.entidades;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity
-@Table(name = "TB_VENTA")
+
 public class Pago implements Serializable {
     private  static final long serialVersionUID = 43695785L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CODIGO_VENTA")
+
+
     private Long codigo;
     private String dni;
     private String nombrepromo;
