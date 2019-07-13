@@ -1,12 +1,15 @@
 package com.proyecto.escapaditas.negocio;
 
 import com.proyecto.escapaditas.entidades.Cliente;
+import com.proyecto.escapaditas.entidades.Pago;
 import com.proyecto.escapaditas.entidades.Promocion;
 import com.proyecto.escapaditas.repositorios.ClienteRepositorio;
+import com.proyecto.escapaditas.repositorios.PagoRepositorio;
 import com.proyecto.escapaditas.repositorios.PromocionRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import javax.xml.ws.ServiceMode;
 import java.util.List;
 import java.util.Optional;
@@ -17,7 +20,15 @@ public class Negocio {
     private ClienteRepositorio clienteRepositorio;
     @Autowired
     private PromocionRepositorio promocionRepositorio;
-    private PromocionRepositorio promocionRepositorio1;
+    @Autowired
+    private PagoRepositorio pagoRepositorio;
+
+    ////////////////////////////////////////METODOS PARA PAGO////////////////////////////////////////
+    @Transactional
+    public Pago grabar(Pago pago)
+    {
+        return pagoRepositorio.save(pago);
+    }
 
     ////////////////////////////////////////METODOS PARA CLIENTES////////////////////////////////////////
     public Cliente registrar(Cliente cliente){
@@ -50,17 +61,17 @@ public class Negocio {
         return clienteRepositorio.buscarCliente(id);
     }
 
-    public List<Promocion> obtenerPromosCliente(String id){
-        //Falta
-        return null;
-    }
 
     ////////////////////////////////////////METODOS PARA PROMOCIONES////////////////////////////////////////
-
-    public Promocion registrarPromocion(String dni, Promocion promocion){
+    public List<Promocion> obtenerPromosCliente(String dni){
+        Cliente c = clienteRepositorio.buscarCliente(dni);
+        return (List<Promocion>)promocionRepositorio.buscarPromosCliente(c.getCodigo());
+    }
+    public Promocion registrarPromocion(String dni, Promocion promocion,String respuesta){
         Cliente c =  clienteRepositorio.buscarCliente(dni);
         if (c!=null) {
             promocion.setCliente(c);
+            promocion.setRespuesta(respuesta);
             return promocionRepositorio.save(promocion);
         }
         return null;
@@ -70,12 +81,20 @@ public class Negocio {
         return (List<Promocion>)promocionRepositorio.findAll();
     }
 
+    public List<Promocion> obtenerPromosVigente(){
+        return (List<Promocion>)promocionRepositorio.buscarPromosVigente();
+    }
+
     public Promocion obtenerPromoNombre(String id){
         return promocionRepositorio.buscarPromocion(id);
     }
 
     public List<Promocion> obtenerPromoDestino(String destino){
         return promocionRepositorio.buscarPromocionDestino(destino);
+    }
+
+    public List<Promocion> obtenerPromos(String destino, String f1, String f2){
+        return promocionRepositorio.buscarPromo(destino,f1,f2);
     }
 
 
